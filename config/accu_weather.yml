@@ -1,0 +1,21 @@
+
+# AccuWeatherClient настройки
+# apikey - ключ генерируется для приложения в раздле MyApps https://developer.accuweather.com/ 
+# location_key - идентификатор города для получения данных о погоде,
+# данные об идентификаторе можно получить через Location API  https://developer.accuweather.com/
+# location_name - название города
+
+development:
+  apikey: qOwvCZQ51JYGkFdfHEb5Sohyb3qx6dPY
+  location_key: 294021
+  location_name: 'Moscow'
+
+test:
+  apikey: qOwvCZQ51JYGkFdfHEb5Sohyb3qx6dPY
+  location_key: 294021
+  location_name: 'Moscow'
+
+production:
+  apikey: qOwvCZQ51JYGkFdfHEb5Sohyb3qx6dPY
+  location_key: 294021
+  location_name: 'Moscow'
