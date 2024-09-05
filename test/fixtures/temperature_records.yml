@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: 1.5
+  unit: MyString
+  epoch_time: 1725425820
+  local_observation_date_time: 2024-09-05 14:04:10
+  location_key: MyString
+
+two:
+  value: 1.5
+  unit: MyString
+  epoch_time: 1725425830
+  local_observation_date_time: 2024-09-05 14:04:10
+  location_key: MyString
