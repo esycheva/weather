@@ -1,0 +1,32 @@
+# все сервисы, от которых зависит приложение
+services:
+
+  # каждому сервису даем произвольное имя
+  db:
+    ports:
+      - "5432:5432"
+    # Docker Hub содержит образы для общего использования
+    image: postgres:16.4-alpine 
+
+    # PostgreSQL должен складывать данные куда-то. 
+    # Здесь указываем складывать данные в /var/lib/postgresql/data
+    volumes:
+      - postgresql:/var/lib/potgresql/data
+
+    # эта секция поределяем переменные окружения для вашего контейнера
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  weather_app:
+    build: ./
+    ports: 
+      - '3000:3000'
+    volumes: 
+      - .:/docker/app 
+    depends_on: 
+      - db   
+
+volumes:
+  postgresql:
+  storage:         
