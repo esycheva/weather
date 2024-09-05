@@ -16,7 +16,7 @@ class AccuWeatherClient
         get_response(uri)
     end    
 
-    def get_historical_current_condition
+    def get_historical_current_conditions
         uri = URI("#{@hostname}/currentconditions/v1/#{@location_key}/historical/24?apikey=#{@apikey}")
         get_response(uri)    
     end
@@ -27,7 +27,7 @@ class AccuWeatherClient
         response = Net::HTTP.get_response(uri)
         case response
         when Net::HTTPSuccess then
-          response.body
+          JSON.parse(response.body)
         else
           response.value
         end
