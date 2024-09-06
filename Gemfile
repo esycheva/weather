@@ -67,3 +67,4 @@ group :test do
 end
 
 gem "grape", "~> 2.1"
+gem "grape_on_rails_routes", "~> 0.3.2"
