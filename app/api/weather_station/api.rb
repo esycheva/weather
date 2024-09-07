@@ -9,28 +9,28 @@ module WeatherStation
 
         namespace :weather do
             get :current do 
-                TemperatureRecord.first
+                TemperatureRecord.current
             end
 
             get :by_time do
-                TemperatureRecord.limit(1) 
+                TemperatureRecord.by_time 
             end
 
             get :historical do 
-                TemperatureRecord.limit(5)
+                TemperatureRecord.historical
             end 
 
             namespace :historical do
                 get :max do 
-                    TemperatureRecord.last
+                    TemperatureRecord.max
                 end
                 
                 get :min do 
-                    TemperatureRecord.last
+                    TemperatureRecord.min
                 end
 
                 get :avg do 
-                    TemperatureRecord.last
+                    TemperatureRecord.avg
                 end
             end
         end
