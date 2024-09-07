@@ -36,11 +36,11 @@ class AccuWeatherService
             unless metric && metric['Value']
                 raise 'Temperature value not found in metrics'
             end
-            TemperatureRecord.find_or_create_by(epoch_time: condition['EpochTime']) do |condition|
-                condition.value = metric['Value']
-                condition.unit = metric['Unit']
-                condition.location_key = condition['LocationKey']
-                condition.local_observation_date_time = condition['LocalObservationDateTime']
+            TemperatureRecord.find_or_create_by(epoch_time: condition['EpochTime']) do |record|
+                record.value = metric['Value']
+                record.unit = metric['Unit']
+                record.location_key = Rails.configuration.accu_weather['location_key']
+                record.local_observation_date_time = condition['LocalObservationDateTime']
             end
         end
     end    

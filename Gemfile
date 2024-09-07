@@ -66,5 +66,11 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "grape", "~> 2.1"
-gem "grape_on_rails_routes", "~> 0.3.2"
+gem 'grape'
+gem 'grape_on_rails_routes'
+
+gem 'grape-swagger'
+gem 'grape-swagger-ui'
+
+gem 'delayed_job_active_record'
+gem 'daemons'
